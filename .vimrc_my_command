@@ -1,0 +1,33 @@
+" :Tree ファイルブラウザを表示する
+function! Tree()
+    execute "vs | e ."
+    execute "vertical resize 30"
+endfunction
+command! Tree call Tree()
+
+" :BookMark 開いているファイルをブックマークする
+let g:bookmarkfile = "$HOME/.vim_bookmark"
+function! BookMark()
+    execute ":redir! >> " . g:bookmarkfile
+        silent! echon expand("%:p") . "\n"
+    redir END
+endfunction
+command! BookMark call BookMark()
+
+" :ShowBookMark ブックマークを開く
+function! ShowBookMark()
+    execute "vs | e " . g:bookmarkfile
+    execute "vertical resize 30"
+endfunction
+command! ShowBookMark call ShowBookMark()
+
+" :FormatXml XMLをフォーマットする
+function! FormatXml()
+    let before = ">\\s\\+<"
+    let after = ">\\r<"
+    execute "%s/" .before. "/" .after. "/g
+        \| filetype indent on
+        \| setf xml
+        \| normal gg=G"
+endfunction
+command! FormatXml call FormatXml()
