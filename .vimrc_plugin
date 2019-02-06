@@ -1,8 +1,8 @@
 """ [Start] aleの設定
-set runtimepath+=/home/masaharu/.vim/ale
+set runtimepath+=~masaharu/.vim/ale
 let g:ale_php_phpstan_configuration = '~/git/php_sandbox/phpstan.neon.dist'
 let g:ale_php_phpcs_standard = 'PSR1,PSR2'
 """ [End] aleの設定
 
-set runtimepath+=/home/masaharu/.vim/vim-gitgutter
-set runtimepath+=/home/masaharu/.vim/vim-fugitive
+set runtimepath+=~masaharu/.vim/vim-gitgutter
+set runtimepath+=~masaharu/.vim/vim-fugitive
