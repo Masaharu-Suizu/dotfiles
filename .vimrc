@@ -59,7 +59,7 @@ set statusline+=%m "変更チェック表示
 set statusline+=%r "読み込み専用かどうか表示
 set statusline+=%h "ヘルプページなら[HELP]と表示
 set statusline+=%w "プレビューウインドウなら[Prevew]と表示
-set statusline+=%{fugitive#statusline()}  "Gitのブランチ名を表示
+"set statusline+=%{fugitive#statusline()}  "Gitのブランチ名を表示
 set statusline+=%= "これ以降は右寄せ表示
 set statusline+=[Encode=%{&fileencoding}] "encode type
 set statusline+=[Format=%{&fileformat}]   "改行コード
@@ -120,7 +120,7 @@ set keywordprg=:help
 " map設定
 nnoremap Y y$
 nnoremap <F3> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
-nnoremap <C-k> :vs \| /<C-R>=expand('<cword>')<CR><CR> <C-w>lzt
+"nnoremap <C-k> :vs \| /<C-R>=expand('<cword>')<CR><CR> <C-w>lzt
 
 " 設定ファイルをロードする
 source ~masaharu/.vimrc_my_command

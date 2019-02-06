@@ -1,8 +1,24 @@
-""" [Start] aleの設定
-set runtimepath+=~masaharu/.vim/ale
+call plug#begin('~masaharu/.vim/plugged')
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
+
+Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
+let g:deoplete#ignore_sources.php = ['omni']
+
+Plug 'w0rp/ale'
 let g:ale_php_phpstan_configuration = '~/git/php_sandbox/phpstan.neon.dist'
 let g:ale_php_phpcs_standard = 'PSR1,PSR2'
-""" [End] aleの設定
 
-set runtimepath+=~masaharu/.vim/vim-gitgutter
-set runtimepath+=~masaharu/.vim/vim-fugitive
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+
+call plug#end()
+
