@@ -17,6 +17,8 @@ Plug 'w0rp/ale'
 let g:ale_php_phpstan_configuration = '~/git/php_sandbox/phpstan.neon.dist'
 let g:ale_php_phpcs_standard = 'PSR1,PSR2'
 
+Plug 'alvan/vim-php-manual'
+
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
