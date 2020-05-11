@@ -9,20 +9,24 @@ else
 endif
 let g:deoplete#enable_at_startup = 1
 
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 
+"" ------------------------- Start setting for ale ------------------------- ""
+" Setting for lint
 let g:ale_linters = {
     \'php': ['php', 'phpstan', 'phpcs', 'langserver']
 \}
-let g:ale_fixers = {
-    \'php': [
-        \'remove_trailing_lines',
-        \'trim_whitespace',
-        \'phpcbf']
-\}
-let g:ale_php_langserver_executable = expand('~/.config/composer/vendor/bin/php-language-server.php')
-let g:ale_fix_on_save = 1
+
 let g:ale_php_phpcs_standard = 'PSR1,PSR12'
+let g:ale_php_langserver_executable =
+    \expand('~/.config/composer/vendor/bin/php-language-server.php')
+
+
+" Setting for fixer
+let g:ale_fixers = {
+    \'php': ['php_cs_fixer']
+\}
+let g:ale_fix_on_save = 1
+"" ------------------------- End setting for ale ------------------------- ""
 
 call plug#end()
-
