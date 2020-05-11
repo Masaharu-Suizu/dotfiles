@@ -9,18 +9,20 @@ else
 endif
 let g:deoplete#enable_at_startup = 1
 
-Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
-let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
-let g:deoplete#ignore_sources.php = ['omni']
-
 Plug 'w0rp/ale'
-let g:ale_php_phpstan_configuration = '~/git/php_sandbox/phpstan.neon.dist'
-let g:ale_php_phpcs_standard = 'PSR1,PSR2'
 
-Plug 'alvan/vim-php-manual'
-
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
+let g:ale_linters = {
+    \'php': ['php', 'phpstan', 'phpcs', 'langserver']
+\}
+let g:ale_fixers = {
+    \'php': [
+        \'remove_trailing_lines',
+        \'trim_whitespace',
+        \'phpcbf']
+\}
+let g:ale_php_langserver_executable = expand('~/.config/composer/vendor/bin/php-language-server.php')
+let g:ale_fix_on_save = 1
+let g:ale_php_phpcs_standard = 'PSR1,PSR12'
 
 call plug#end()
 
