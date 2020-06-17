@@ -30,7 +30,7 @@ set listchars=tab:>-,trail:-
 augroup HighlightSpaces
     autocmd!
     " ハイライトカラーを設定
-    autocmd VimEnter,WinEnter,ColorScheme * highlight Spaces ctermbg=Red
+    autocmd VimEnter,WinEnter,ColorScheme * highlight Spaces ctermbg=Red guibg=Red
     " 全角スペースと不要な半角スペースを正規表現で定義
     autocmd VimEnter,WinEnter * match Spaces /\(　\|\s\+$\)/
 augroup END
@@ -39,7 +39,7 @@ augroup END
 set hlsearch
 
 " 検索キーワードのハイライトカラーを設定
-hi Search ctermbg=blue
+hi Search ctermbg=blue guibg=blue
 
 " 検索時に大文字小文字を区別しない
 set ignorecase
@@ -51,7 +51,7 @@ set nowrapscan
 set laststatus=2
 
 " ステータスラインのハイライトカラーの設定
-highlight StatusLine cterm=bold ctermbg=DarkMagenta
+highlight StatusLine cterm=bold ctermbg=DarkMagenta gui=bold guibg=DarkMagenta
 
 """ [Start] ステータスラインに表示する内容の設定
 set statusline=%F  "ファイル名表示
@@ -112,7 +112,7 @@ set showcmd
 " 対応するカッコをハイライト
 set showmatch
 " 対応するカッコのハイライトカラーを設定
-hi MatchParen ctermbg=DarkMagenta
+hi MatchParen ctermbg=DarkMagenta guibg=DarkMagenta
 
 " man以外のhelpも参照できるようにする
 set keywordprg=:help
